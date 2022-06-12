@@ -8,66 +8,82 @@ let a, b, rest;
 console.log(a, b); // 10, 20
 
 [a, b, ...rest] = [10, 20, 30, 40, 50];
-console.log(a, b, rest); // 10 20 [30, 40, 50]
+console.log(a); // 10
+console.log(b); // 20
+console.log(rest); // [30, 40, 50]
 
 ({ a, b } = { a: 10, b: 20 });
-console.log(a, b); // 10 20
+console.log(a); // 10
+console.log(b); // 20
 
 ({ a, b, ...rest } = { a: 10, b: 20, c: 30, d: 40 });
-console.log(a, b, rest); // 10 20 {c: 30, d: 40}
+console.log(a); // 10
+console.log(b); // 20
+console.log(rest); // {c: 30, d: 40}
 
 var x = [1, 2, 3, 4, 5];
 var [y, z] = x;
-console.log(y, z); // 1 2
+console.log(y); // 1
+console.log(z); // 2
 
 var foo = ['one', 'two', 'three'];
+
 var [red, yellow, green] = foo;
-console.log(red, yellow, green); // "one" "two" "three"
+console.log(red); // "one"
+console.log(yellow); // "two"
+console.log(green); // "three"
 
 var a2, b2;
 [a2, b2] = [1, 2];
-console.log(a2, b2); // 1 2
+console.log(a2); // 1
+console.log(b2); // 2
 
 var a3, b3;
 [a3 = 5, b3 = 7] = [1];
-console.log(a3, b3); // 1, 7
-console.log(); //
+console.log(a3); // 1
+console.log(b3); // 7
 
 var a4 = 1;
 var b4 = 3;
 [a4, b4] = [b4, a4];
-console.log(a4, b4); // 3 1
+console.log(a4); // 3
+console.log(b4); // 1
 
 function f1() {
   return [1, 2];
 }
 var a5, b5;
 [a5, b5] = f1();
-console.log(a5, b5); // 1 2
+console.log(a5); // 1
+console.log(b5); // 2
 
 function f2() {
   return [1, 2, 3];
 }
 var [a6, , b6] = f2();
-console.log(a6, b6); // 1 3
+console.log(a6); // 1
+console.log(b6); // 3
 
 var [a7, ...b7] = [1, 2, 3];
-console.log(a7, b7); // 1 [2, 3]
+console.log(a7); // 1
+console.log(b7); // [2, 3]
 
 var o = { p: 42, q: true };
 var { p, q } = o;
-console.log(p, q); // 42 true
+console.log(p); // 42
+console.log(q); // true
 
 var a8, b8;
 ({ a8, b8 } = { a8: 1, b8: 2 });
-console.log(a8, b8); // 1 2
 
 var o = { p: 42, q: true };
 var { p: foo, q: bar } = o;
-console.log(foo, bar); // 42 true
+console.log(foo); // 42
+console.log(bar); // true
 
 var { a9 = 10, b9 = 5 } = { a9: 3 };
-console.log(a9, b9); // 3 5
+console.log(a9); // 3
+console.log(b9); // 5
 
 var { a10: aa = 10, b10: bb = 5 } = { a10: 3 };
 console.log(aa); // 3
