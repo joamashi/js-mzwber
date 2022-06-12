@@ -15,5 +15,7 @@ const students = [
 ];
 
 const result = students.find((student, index) => {
-  console.log(student, index);
+  // console.log(student, index);
+  return student.score === 90;
 });
+console.log(result);
